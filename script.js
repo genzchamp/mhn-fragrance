@@ -1,69 +1,10 @@
-// MHN Fragrance Interactive Script
-
-// Smooth reveal animation when scrolling
-
-const sections = document.querySelectorAll(
-    ".card, .review-box, .hero-content"
-);
-
-
-const observer = new IntersectionObserver(
-(entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-}
-
-});
-
-},
-{
-threshold:0.15
-}
-);
-
-
-
-sections.forEach(section=>{
-
-section.classList.add("hidden");
-
-observer.observe(section);
-
-});
-
-
-
-
-// WhatsApp button animation
-
-const whatsapp = document.querySelector(".whatsapp");
-
-
-setInterval(()=>{
-
-whatsapp.style.transform="scale(1.1)";
-
-
-setTimeout(()=>{
-
-whatsapp.style.transform="scale(1)";
-
-},500);
-
-
-},3000);
-
-
-
-
-// Current year automatically updates footer
-
-const year = new Date().getFullYear();
-
-document.querySelector("footer p").innerHTML =
-`© ${year} MHN Fragrance. All Rights Reserved.`;
+const products=[{"id":"A01","name":"Signature Abaya 01","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_2175.HEIC"},{"id":"A02","name":"Signature Abaya 02","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_2181.HEIC"},{"id":"A03","name":"Signature Abaya 03","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_2183.HEIC"},{"id":"A04","name":"Signature Abaya 04","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_2186.HEIC"},{"id":"A05","name":"Signature Abaya 05","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_2188.JPG"},{"id":"A06","name":"Signature Abaya 06","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_2190.JPG"},{"id":"A07","name":"Signature Abaya 07","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4474.JPG"},{"id":"A08","name":"Signature Abaya 08","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4554.JPG"},{"id":"A09","name":"Signature Abaya 09","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4555.JPG"},{"id":"A10","name":"Signature Abaya 10","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4556.JPG"},{"id":"A11","name":"Signature Abaya 11","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4557.JPG"},{"id":"A12","name":"Signature Abaya 12","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4558.JPG"},{"id":"A13","name":"Signature Abaya 13","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4559.JPG"},{"id":"A14","name":"Signature Abaya 14","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4560.JPG"},{"id":"A15","name":"Signature Abaya 15","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4561.JPG"},{"id":"A16","name":"Signature Abaya 16","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4562.JPG"},{"id":"A17","name":"Signature Abaya 17","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4563.JPG"},{"id":"A18","name":"Signature Abaya 18","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4564.JPG"},{"id":"A19","name":"Signature Abaya 19","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4565.JPG"},{"id":"A20","name":"Signature Abaya 20","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4566.JPG"},{"id":"A21","name":"Signature Abaya 21","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4568.JPG"},{"id":"A22","name":"Signature Abaya 22","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/IMG_4569.JPG"},{"id":"A23","name":"Signature Abaya 23","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/Screenshot_20260722-151655.jpg"},{"id":"A24","name":"Signature Abaya 24","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/Screenshot_20260722-151725.jpg"},{"id":"A25","name":"Signature Abaya 25","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/Screenshot_20260722-151744.jpg"},{"id":"A26","name":"Signature Abaya 26","cat":"Abayas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/abayas/Screenshot_20260722-151817.jpg"},{"id":"J01","name":"Heritage Jallabiya 01","cat":"Jallabiyas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/jallabiyas/IMG-20260711-WA0017.jpg"},{"id":"J02","name":"Heritage Jallabiya 02","cat":"Jallabiyas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/jallabiyas/IMG-20260711-WA0019.jpg"},{"id":"J03","name":"Heritage Jallabiya 03","cat":"Jallabiyas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/jallabiyas/IMG-20260711-WA0020.jpg"},{"id":"J04","name":"Heritage Jallabiya 04","cat":"Jallabiyas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/jallabiyas/IMG-20260711-WA0021.jpg"},{"id":"J05","name":"Heritage Jallabiya 05","cat":"Jallabiyas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/jallabiyas/IMG-20260711-WA0023.jpg"},{"id":"J06","name":"Heritage Jallabiya 06","cat":"Jallabiyas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/jallabiyas/IMG-20260711-WA0024.jpg"},{"id":"J07","name":"Heritage Jallabiya 07","cat":"Jallabiyas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/jallabiyas/IMG-20260711-WA0025.jpg"},{"id":"J08","name":"Heritage Jallabiya 08","cat":"Jallabiyas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/jallabiyas/IMG-20260711-WA0026.jpg"},{"id":"J09","name":"Heritage Jallabiya 09","cat":"Jallabiyas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/jallabiyas/IMG-20260711-WA0027.jpg"},{"id":"J10","name":"Heritage Jallabiya 10","cat":"Jallabiyas","img":"https://raw.githubusercontent.com/genzchamp/zin-scents/main/images/jallabiyas/IMG-20260711-WA0032.jpg"}];
+const grid=document.getElementById("productGrid"),filters=document.getElementById("filters"),search=document.getElementById("search"),modal=document.getElementById("modal"),modalImg=document.getElementById("modalImg"),modalTitle=document.getElementById("modalTitle"),modalCat=document.getElementById("modalCat");
+let active="All";
+function render(){const q=search.value.trim().toLowerCase();const list=products.filter(p=>(active==="All"||p.cat===active)&&(!q||p.name.toLowerCase().includes(q)));grid.innerHTML=list.map(p=>'<article class="product" data-id="'+p.id+'"><div class="product-media"><img loading="lazy" src="'+p.img+'" alt="'+p.name+'"><span class="product-tag">'+p.cat.toUpperCase().slice(0,-1)+'</span></div><div class="product-info"><div><h3>'+p.name+'</h3><p>CURATED PIECE · ENQUIRE FOR PRICE</p></div><span class="view">View ↗</span></div></article>').join("")||'<p style="grid-column:1/-1;padding:50px 0;color:#777">No pieces found.</p>';grid.querySelectorAll(".product").forEach(el=>el.addEventListener("click",()=>openProduct(el.dataset.id)));}
+function openProduct(id){const p=products.find(x=>x.id===id);if(!p)return;modalImg.src=p.img;modalImg.alt=p.name;modalTitle.textContent=p.name;modalCat.textContent=p.cat.toUpperCase()+" · OBA EDIT";modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";}
+function closeModal(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true");document.body.style.overflow="";}
+filters.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;active=b.dataset.filter;filters.querySelectorAll("button").forEach(x=>x.classList.remove("active"));b.classList.add("active");render();});
+search.addEventListener("input",render);modal.addEventListener("click",e=>{if(e.target.matches("[data-close]"))closeModal();});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
+document.getElementById("year").textContent=new Date().getFullYear();render();
+const menuBtn=document.getElementById("menuBtn"),mobileMenu=document.getElementById("mobileMenu");menuBtn.addEventListener("click",()=>mobileMenu.classList.toggle("open"));mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileMenu.classList.remove("open")));
